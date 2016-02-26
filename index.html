@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Mass Effect RPG</title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    </head>
+    <body>
+        <div id="title"><h1>Mass Effect RPG</h1></div>
+        <div id="Cselector">
+            <button id="character1" data-name="Shepard"><h3>
+                <p>Commander Shepard</p>
+                <img src="http://static.giantbomb.com/uploads/scale_small/0/1366/1775330-shepard.jpg" height="150" width="125">
+                 <span id="hp1" ><p> 120 </p></span>
+            </h3></button>
+            <button id="character2" data-name="Saren"><h3>
+            <p>Saren</p>
+                <img src="http://orig12.deviantart.net/2eb9/f/2012/134/f/8/saren_arterius_by_fonteart-d4zpkjt.jpg" height="150" width="125"><span id="hp2" ><p> 100 </p></span>
+            </h3></button>
+            <button id="character3" data-name="Illusive_Man"><h3>
+            <p>The Illusive Man</p>
+                <img src="http://pre03.deviantart.net/c323/th/pre/i/2012/230/2/d/the_illusive_man_by_houstonsharp-d5blzly.jpg" height="150" width="125"><span id="hp3" ><p> 150 </p></span>
+            </h3></button>
+            <button id="character4" data-name="Reapers"><h3>
+            <p> The Reapers</p>
+                <img src="http://41.media.tumblr.com/tumblr_mbozy6Zp6v1ribncbo1_1280.jpg" height="150" width="125"><span id="hp4" ><p> 180 </p></span>
+            </h3></button>
+        </div>
+        <div id="yourChar">Your Character<br></div>
+        <div id="enemies">Enemies Available to Attack<br></div>
+        <div id="fight">Press To Attack<br> <button id="attack">Attack</button></div>
+        <div id="Defender">Defender<br></div>
+        <div id="hiddden" style="display:none;"></div>
+
+
+        <script type="text/javascript">
+                    var userInput=[];
+                        var a = $( "#character1" );
+                        var b = $( "#character2" );
+                        var c = $( "#character3" );
+                        var d = $( "#character4" );
+            $( window ). ready(function() {
+                $('#character1, #character2, #character3, #character4').on('click',function(){
+                    userInput.push($(this).data('name'));
+                    console.log(userInput)
+                    if (userInput=="Shepard") {
+                            userInput=[];
+                           $("#yourChar").append(a);   
+                           $("#enemies").append(b);
+                           $("#enemies").append(c);
+                           $("#enemies").append(d);
+                            console.log(userInput)
+                            $( b ).click(function() {
+                                if (userInput=="Saren") {
+                                $("#Defender").append(b);
+                                };
+                                $( "#attack" ).click(function() {
+                                   
+                                });
+
+
+
+                            });
+                           
+
+
+
+
+
+
+
+                    }
+
+
+
+                 });
+                    
+
+            });
+        </script>
+    </body>
+</html>
