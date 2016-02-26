@@ -38,10 +38,12 @@
 
 <script type="text/javascript">
     var userInput=[];
+    //storing buttons in vars for easy access.
     var a = $( "#character1" );
     var b = $( "#character2" );
     var c = $( "#character3" );
     var d = $( "#character4" );
+    // var t is the amount of times attack is hit, used to calculate AP.
     var t = 0;
     $( window ). ready(function() {
         $('#character1, #character2, #character3, #character4').on('click',function(){
@@ -130,6 +132,21 @@
 
 
                     });
+                    }else if (userInput=="Illusive_Man") {
+                    $("#Defender").append(c);
+                    $( "#attack" ).click(function() {
+                    t=t+1;
+                    $('#hp1').text(function(i, val) { return val*1-20 });
+                    $('#hp3').text(function(i, val) { return val*1-6*t });
+                        if (parseInt($('#hp1').text())<=0) {
+                                         $("#hiddden").append(a);
+                                            alert('You lose!!! Game over');
+
+
+                        };
+
+                    });
+
                     };
                                 
 
