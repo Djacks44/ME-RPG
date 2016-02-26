@@ -10,7 +10,7 @@
         <div id="Cselector">
             <button id="character1" data-name="Shepard"><h3>
                 <p>Commander Shepard</p>
-                <img src="http://static.giantbomb.com/uploads/scale_small/0/1366/1775330-shepard.jpg" height="150" width="125">
+                <img src="http://static.giantbomb.com/uploads/scale_small/0/1366/1775330-shepard.jpg" height="150" width="125"><br>
                  <span id="hp1" ><p> 120 </p></span>
             </h3></button>
             <button id="character2" data-name="Saren"><h3>
@@ -31,36 +31,111 @@
         <div id="fight">Press To Attack<br> <button id="attack">Attack</button></div>
         <div id="Defender">Defender<br></div>
         <div id="hiddden" style="display:none;"></div>
+        <FORM>
+        <INPUT TYPE="button" onClick="history.go(0)" VALUE="Reset">
+        </FORM>
 
 
-        <script type="text/javascript">
-                    var userInput=[];
-                        var a = $( "#character1" );
-                        var b = $( "#character2" );
-                        var c = $( "#character3" );
-                        var d = $( "#character4" );
-            $( window ). ready(function() {
-                $('#character1, #character2, #character3, #character4').on('click',function(){
-                    userInput.push($(this).data('name'));
-                    console.log(userInput)
-                    if (userInput=="Shepard") {
-                            userInput=[];
-                           $("#yourChar").append(a);   
-                           $("#enemies").append(b);
-                           $("#enemies").append(c);
-                           $("#enemies").append(d);
-                            console.log(userInput)
-                            $( b ).click(function() {
-                                if (userInput=="Saren") {
-                                $("#Defender").append(b);
-                                };
+<script type="text/javascript">
+    var userInput=[];
+    var a = $( "#character1" );
+    var b = $( "#character2" );
+    var c = $( "#character3" );
+    var d = $( "#character4" );
+    var t = 0;
+    $( window ). ready(function() {
+        $('#character1, #character2, #character3, #character4').on('click',function(){
+            userInput.push($(this).data('name'));
+            console.log(userInput)
+            if (userInput=="Shepard") {
+                userInput=[];
+                $("#yourChar").append(a);   
+                $("#enemies").append(b);
+                $("#enemies").append(c);
+                $("#enemies").append(d);
+                console.log(userInput)
+                $( '#character2, #character3, #character4').click(function() {
+                    if (userInput=="Saren") {
+                    $("#Defender").append(b);
+                    $( "#attack" ).click(function() {
+                    t=t+1;
+                    $('#hp1').text(function(i, val) { return val*1-5 });
+                    $('#hp2').text(function(i, val) { return val*1-6*t });
+                        if (parseInt($('#hp2').text())<0) {
+                        $("#hiddden").append(b);
+                        userInput=[];
+                        $('#character3, #character4').click(function() {
+                            if (userInput=="Illusive_Man") {
+                                $("#Defender").append(c);
                                 $( "#attack" ).click(function() {
-                                   
+                                    t=t+1;
+                                $('#hp1').text(function(i, val) { return val*1-5 });
+                                $('#hp3').text(function(i, val) { return val*1-6*t });
+                                if (parseInt($('#hp3').text())<0) {
+                                     $("#hiddden").append(c);
+                                        userInput=[];
+                                $('#character4').click(function() {
+                                    if (userInput=="Reapers") {
+                                    $("#Defender").append(d);
+                                    $( "#attack" ).click(function() {
+                                        t=t+1;
+                                        $('#hp1').text(function(i, val) { return val*1-15 });
+                                        $('#hp4').text(function(i, val) { return val*1-6*t });
+                                if (parseInt($('#hp4').text())<0) {
+                                     $("#hiddden").append(d);
+                                        alert('You win!!! Game over');
+
+
+                                    };
+
+
+
+                                });
+                                };
+                                });
+                                };
+
+                                });
+                                            
+
+                            }else{
+                                $("#Defender").append(d);
+                                $( "#attack" ).click(function() {
+                                        t=t+1;
+                                        $('#hp1').text(function(i, val) { return val*1-40 });
+                                        $('#hp4').text(function(i, val) { return val*1-6*t });
+                                if (parseInt($('#hp1').text())<=0) {
+                                     $("#hiddden").append(a);
+                                        alert('You lose!!! Game over');
+                                    };
+
                                 });
 
 
 
-                            });
+
+
+                                            
+                            };
+
+
+
+                        });
+
+
+                        };
+
+
+
+
+
+                    });
+                    };
+                                
+
+
+
+                });
                            
 
 
@@ -69,14 +144,14 @@
 
 
 
-                    }
+            }
 
 
 
-                 });
+        });
                     
 
-            });
+    });
         </script>
     </body>
 </html>
