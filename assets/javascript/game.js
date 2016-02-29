@@ -7,9 +7,9 @@ var userInput=[];
     var d = $( "#character4" );
     //AP is base Attack Poiints for each corrosponding charachter
     var APa = 6
-    var APb = 5
-    var APc = 8
-    var APd = 10
+    var APb = 17
+    var APc = 5
+    var APd = 4
     //CA is Counter Attack power
     var CAa = 10
     var CAb = 5
@@ -34,10 +34,12 @@ var userInput=[];
                     $("#Defender").append(b);
                     $( "#attack" ).click(function() {
                     t=t+1;
+                    // debugger;
                     $('#hp1').text(function(i, val) { return val*1-CAb });
                     $('#hp2').text(function(i, val) { return val*1- APa *t });
-                        if (parseInt($('#hp2').text())<0) {
+                        if (parseInt($('#hp2').text())<=0) {
                         $("#hiddden").append(b);
+                        CAb=0;
                         userChoice=[];
                         
                         };
@@ -53,8 +55,9 @@ var userInput=[];
                                          $("#hiddden").append(a);
                                             alert('You lose!!! Game over');
 
-                        }else if (parseInt($('#hp3').text())<0) {
+                        }else if (parseInt($('#hp3').text())<=0) {
                             $("#hiddden").append(c);
+                            CAc=0;
                             userChoice=[];
                         };
 
@@ -70,8 +73,9 @@ var userInput=[];
                                          $("#hiddden").append(a);
                                             alert('You lose!!! Game over');
 
-                        }else if (parseInt($('#hp4').text())<0) {
+                        }else if (parseInt($('#hp4').text())<=0) {
                             $("#hiddden").append(d);
+                            CAd=0;
                             alert('You Win!!! Game over')
                             userChoice=[];
                         };
@@ -104,10 +108,11 @@ var userInput=[];
                     $("#Defender").append(a);
                     $( "#attack" ).click(function() {
                     t=t+1;
-                    $('#hp2').text(function(i, val) { return val*1-2 });
-                    $('#hp1').text(function(i, val) { return val*1-6*t });
-                        if (parseInt($('#hp1').text())<0) {
+                    $('#hp2').text(function(i, val) { return val*1-CAa });
+                    $('#hp1').text(function(i, val) { return val*1-APb*t });
+                        if (parseInt($('#hp1').text())<=0) {
                         $("#hiddden").append(a);
+                        CAa=0;
                         userChoice=[];
                         
                         };
@@ -117,14 +122,15 @@ var userInput=[];
                     $("#Defender").append(c);
                     $( "#attack" ).click(function() {
                     t=t+1;
-                    $('#hp2').text(function(i, val) { return val*1-5 });
-                    $('#hp3').text(function(i, val) { return val*1-6*t });
+                    $('#hp2').text(function(i, val) { return val*1-CAc });
+                    $('#hp3').text(function(i, val) { return val*1-APb*t });
                         if (parseInt($('#hp2').text())<=0) {
                                          $("#hiddden").append(a);
                                             alert('You lose!!! Game over');
 
-                        }else if (parseInt($('#hp3').text())<0) {
+                        }else if (parseInt($('#hp3').text())<=0) {
                             $("#hiddden").append(c);
+                            CAc=0;
                             userChoice=[];
                         };
 
@@ -134,14 +140,15 @@ var userInput=[];
                     $("#Defender").append(d);
                     $( "#attack" ).click(function() {
                     t=t+1;
-                    $('#hp2').text(function(i, val) { return val*1-15 });
-                    $('#hp4').text(function(i, val) { return val*1-6*t });
+                    $('#hp2').text(function(i, val) { return val*1-CAd });
+                    $('#hp4').text(function(i, val) { return val*1-APb*t });
                         if (parseInt($('#hp2').text())<=0) {
                                          $("#hiddden").append(a);
                                             alert('You lose!!! Game over');
 
-                        }else if (parseInt($('#hp4').text())<0) {
+                        }else if (parseInt($('#hp4').text())<=0) {
                             $("#hiddden").append(d);
+                            CAd=0;
                             alert('You Win!!! Game over')
                             userChoice=[];
                         };
@@ -171,10 +178,11 @@ var userInput=[];
                     $("#Defender").append(a);
                     $( "#attack" ).click(function() {
                     t=t+1;
-                    $('#hp3').text(function(i, val) { return val*1-2 });
-                    $('#hp1').text(function(i, val) { return val*1-6*t });
-                        if (parseInt($('#hp1').text())<0) {
+                    $('#hp3').text(function(i, val) { return val*1-CAa });
+                    $('#hp1').text(function(i, val) { return val*1-APc*t });
+                        if (parseInt($('#hp1').text())<=0) {
                         $("#hiddden").append(a);
+                        CAa=0;
                         userChoice=[];
                         
                         };
@@ -184,14 +192,15 @@ var userInput=[];
                     $("#Defender").append(b);
                     $( "#attack" ).click(function() {
                     t=t+1;
-                    $('#hp3').text(function(i, val) { return val*1-5 });
-                    $('#hp2').text(function(i, val) { return val*1-6*t });
+                    $('#hp3').text(function(i, val) { return val*1-CAb });
+                    $('#hp2').text(function(i, val) { return val*1-APc*t });
                         if (parseInt($('#hp3').text())<=0) {
                                          $("#hiddden").append(c);
                                             alert('You lose!!! Game over');
 
-                        }else if (parseInt($('#hp2').text())<0) {
+                        }else if (parseInt($('#hp2').text())<=0) {
                             $("#hiddden").append(b);
+                            CAb=0;
                             userChoice=[];
                         };
 
@@ -201,15 +210,16 @@ var userInput=[];
                     $("#Defender").append(d);
                     $( "#attack" ).click(function() {
                     t=t+1;
-                    $('#hp3').text(function(i, val) { return val*1-15 });
-                    $('#hp4').text(function(i, val) { return val*1-6*t });
+                    $('#hp3').text(function(i, val) { return val*1-CAd });
+                    $('#hp4').text(function(i, val) { return val*1-APc*t });
                         if (parseInt($('#hp3').text())<=0) {
                                          $("#hiddden").append(c);
                                             alert('You lose!!! Game over');
 
-                        }else if (parseInt($('#hp4').text())<0) {
+                        }else if (parseInt($('#hp4').text())<=0) {
                             $("#hiddden").append(d);
                             alert('You Win!!! Game over')
+                            CAd=0;
                             userChoice=[];
                         };
 
@@ -235,10 +245,11 @@ var userInput=[];
                     $("#Defender").append(a);
                     $( "#attack" ).click(function() {
                     t=t+1;
-                    $('#hp4').text(function(i, val) { return val*1-2 });
-                    $('#hp1').text(function(i, val) { return val*1-6*t });
-                        if (parseInt($('#hp1').text())<0) {
+                    $('#hp4').text(function(i, val) { return val*1-CAa });
+                    $('#hp1').text(function(i, val) { return val*1-APd*t });
+                        if (parseInt($('#hp1').text())<=0) {
                         $("#hiddden").append(a);
+                        CAa=0;
                         userChoice=[];
                         
                         };
@@ -248,14 +259,15 @@ var userInput=[];
                     $("#Defender").append(b);
                     $( "#attack" ).click(function() {
                     t=t+1;
-                    $('#hp4').text(function(i, val) { return val*1-5 });
-                    $('#hp2').text(function(i, val) { return val*1-6*t });
+                    $('#hp4').text(function(i, val) { return val*1-CAb });
+                    $('#hp2').text(function(i, val) { return val*1-APd*t });
                         if (parseInt($('#hp4').text())<=0) {
                                          $("#hiddden").append(d);
                                             alert('You lose!!! Game over');
 
-                        }else if (parseInt($('#hp2').text())<0) {
+                        }else if (parseInt($('#hp2').text())<=0) {
                             $("#hiddden").append(b);
+                            CAb=0;
                             userChoice=[];
                         };
 
@@ -265,15 +277,16 @@ var userInput=[];
                     $("#Defender").append(c);
                     $( "#attack" ).click(function() {
                     t=t+1;
-                    $('#hp4').text(function(i, val) { return val*1-15 });
-                    $('#hp3').text(function(i, val) { return val*1-6*t });
+                    $('#hp4').text(function(i, val) { return val*1-CAc });
+                    $('#hp3').text(function(i, val) { return val*1-APd*t });
                         if (parseInt($('#hp4').text())<=0) {
                                          $("#hiddden").append(d);
                                             alert('You lose!!! Game over');
 
-                        }else if (parseInt($('#hp3').text())<0) {
+                        }else if (parseInt($('#hp3').text())<=0) {
                             $("#hiddden").append(c);
-                            alert('You Win!!! Game over')
+                            CAc=0;
+
                             userChoice=[];
                         };
 
