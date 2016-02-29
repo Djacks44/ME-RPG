@@ -9,27 +9,29 @@
         <div id="title"><h1>Mass Effect RPG</h1></div>
         <div id="Cselector">
             <button id="character1" data-name="Shepard"><h3>
-                <p>Commander Shepard</p>
-                <img src="http://static.giantbomb.com/uploads/scale_small/0/1366/1775330-shepard.jpg" height="150" width="125"><br>
+                <p>CDR Shepard</p>
+                <img src="http://static.giantbomb.com/uploads/scale_small/0/1366/1775330-shepard.jpg" height="100" width="75"><br>
                  <span id="hp1" ><p> 120 </p></span>
             </h3></button>
             <button id="character2" data-name="Saren"><h3>
             <p>Saren</p>
-                <img src="http://orig12.deviantart.net/2eb9/f/2012/134/f/8/saren_arterius_by_fonteart-d4zpkjt.jpg" height="150" width="125"><br><span id="hp2" ><p> 100 </p></span>
+                <img src="http://orig12.deviantart.net/2eb9/f/2012/134/f/8/saren_arterius_by_fonteart-d4zpkjt.jpg" height="100" width="75"><br><span id="hp2" ><p> 100 </p></span>
             </h3></button>
             <button id="character3" data-name="Illusive_Man"><h3>
             <p>The Illusive Man</p>
-                <img src="http://pre03.deviantart.net/c323/th/pre/i/2012/230/2/d/the_illusive_man_by_houstonsharp-d5blzly.jpg" height="150" width="125"><br><span id="hp3" ><p> 150 </p></span>
+                <img src="http://pre03.deviantart.net/c323/th/pre/i/2012/230/2/d/the_illusive_man_by_houstonsharp-d5blzly.jpg" height="100" width="75"><br><span id="hp3" ><p> 150 </p></span>
             </h3></button>
             <button id="character4" data-name="Reapers"><h3>
             <p> The Reapers</p>
-                <img src="http://41.media.tumblr.com/tumblr_mbozy6Zp6v1ribncbo1_1280.jpg" height="150" width="125"><br><span id="hp4" ><p> 180 </p></span>
+                <img src="http://41.media.tumblr.com/tumblr_mbozy6Zp6v1ribncbo1_1280.jpg" height="100" width="75"><br><span id="hp4" ><p> 180 </p></span>
             </h3></button>
         </div>
         <div id="yourChar">Your Character<br></div>
         <div id="enemies">Enemies Available to Attack<br></div>
         <div id="fight">Press To Attack<br> <button id="attack">Attack</button></div>
         <div id="Defender">Defender<br></div>
+        <div id="attacker"></div>
+        <div id="counter"></div>
         <div id="hiddden" style="display:none;"></div>
         <FORM>
         <INPUT TYPE="button" onClick="history.go(0)" VALUE="Reset">
@@ -37,11 +39,14 @@
         <style>
         body{
             background: url(http://orig06.deviantart.net/3599/f/2014/257/2/e/mass_effect_2_citadel_by_droot1986-d2k59zi.jpg);
-            background-size: 1850px;
+            background-size: 1900px;
             background-repeat: no-repeat;
             color: white;
-            font-size: 18px;
+            font-size: 24px;
 
+        } #character1,#character2,#character3,#character4{
+            width:10%;
+            height: 200px;
         }
 
         </style>
